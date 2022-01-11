@@ -32,4 +32,11 @@ describe('Employee', () => {
         expect(employee.email).toBe('wonkaaustin@gmail.com');
         expect(employee.getEmail()).toBe('wonkaaustin@gmail.com');
     });
+    // test getRole() function
+    it('Should return Employee', () => {
+        const object = 'Employee';
+        const employee = new Employee('Austin', 25, 'wonkaaustin@gmail.com');
+
+        expect(employee.getRole()).toBe(object);
+    });
 });

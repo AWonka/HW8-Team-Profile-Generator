@@ -34,9 +34,8 @@ describe('Employee', () => {
     });
     // test getRole() function
     it('Should return Employee', () => {
-        const object = 'Employee';
-        const employee = new Employee('Austin', 25, 'wonkaaustin@gmail.com');
+        const employee = new Employee();
 
-        expect(employee.getRole()).toBe(object);
+        expect(employee.getRole()).toBe('Employee');
     });
 });

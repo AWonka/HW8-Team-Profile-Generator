@@ -56,6 +56,8 @@ const promptUser = () => {
     });
 };
 
+promptUser();
+
 function generateFile(file, data) {
     fs.writeFile(file, data, (err) => {
         if(err) throw err;

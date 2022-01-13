@@ -270,7 +270,11 @@ promptUser();
 
 function generateFile(file, data) {
     fs.writeFile(file, data, (err) => {
-        if(err) throw err;
-        console.log('File Successfully Generated');
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log('File successfully generated!')
+        }
     });
 };

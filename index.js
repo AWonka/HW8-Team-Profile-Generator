@@ -180,6 +180,92 @@ const promptEngineer = () => {
     })
 };
 
+const promptIntern = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: "Please enter the Intern's name.",
+            name: 'name',
+            validate: name => {
+                if (name) {
+                    return true;
+                } else {
+                    console.log("Please enter the Intern's name!")
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "Please enter the Intern's ID number.",
+            name: 'id',
+            validate: id => {
+                if (isNaN(id)) {
+                    console.log("Please enter a number for the ID!")
+                    return false;
+                } else if (!id) {
+                    console.log("Please enter a number for the ID!")
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "Please enter the Intern's email.",
+            name: 'email',
+            validate: email => {
+                validInput = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+                if (validInput) {
+                    return true;
+                } else {
+                    console.log("Please enter a valid email!")
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "Please enter the school the Intern is attending or attended.",
+            name: 'school',
+            validate: school => {
+                if (school) {
+                    return true;
+                } else {
+                    console.log("Please enter a school name!")
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'list',
+            message: "Would you like to add an Engineer, another Intern, or finish building your team?",
+            choices: ['Engineer', 'Intern', 'Finish Building Your Team'],
+            name: 'role',
+        },
+    ])
+
+    .then((internInfo) => {
+        const intern = new Intern(internInfo.name, internInfo.id, internInfo.email, internInfo.school);
+        teamBuild.push(intern);
+
+        switch(internInfo.role) {
+            case 'Engineer':
+                promptEngineer();
+                break;
+            case 'Intern':
+                promptIntern();
+                break;
+            default:
+                // put in file name and pass in data
+                generateFile();
+        }
+
+
+    })
+};
+
 promptUser();
 
 function generateFile(file, data) {

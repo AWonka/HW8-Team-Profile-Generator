@@ -5,43 +5,23 @@ describe('Engineer', () => {
         const engineer = new Engineer();
 
         expect(typeof(engineer)).toBe('object');
+        expect(engineer.getRole()).toBe('Engineer');
     });
 
-    it('creates a name property for engineer object and getName returns the name value', () => {
+    it('creates name, id, email, and github properties for Engineer object', () => {
         const name = 'Derek';
-        const engineer = new Engineer(name);
+        const id = 25
+        const email = 'derek@gmail.com'
+        const github = 'dgit'
+        const engineer = new Engineer(name, id, email, github);
 
         expect(engineer.name).toBe('Derek');
-        expect(engineer.getName()).toBe('Derek');
-    });
-
-    it('creates an id property for engineer object and getId returns the id value', () => {
-        const id = 48;
-        const engineer = new Engineer('Derek', id);
-
-        expect(engineer.id).toBe(48);
-        expect(engineer.getId()).toBe(48);
-    });
-
-    it('creates an email property for engineer object and getEmail returns the email value', () => {
-        const email = 'derek@gmail.com';
-        const engineer = new Engineer('Derek', 48, email);
-
+        expect(engineer.id).toBe(25);
         expect(engineer.email).toBe('derek@gmail.com');
-        expect(engineer.getEmail()).toBe('derek@gmail.com');
-    });
-
-    it('creates a github property for engineer object and getGithub returns github value', () => {
-        const github = 'dgit';
-        const engineer = new Engineer('Derek', 48, 'derek@gmail.com', github);
-
         expect(engineer.github).toBe('dgit');
+        expect(engineer.getName()).toBe('Derek');
+        expect(engineer.getId()).toBe(25);
+        expect(engineer.getEmail()).toBe('derek@gmail.com');
         expect(engineer.getGithub()).toBe('dgit');
-    });
-    // test getRole function
-    it('returns Engineer with getRole function', () => {
-        const engineer = new Engineer();
-
-        expect(engineer.getRole()).toBe('Engineer');
     });
 });

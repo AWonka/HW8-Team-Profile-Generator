@@ -96,6 +96,54 @@ const promptUser = () => {
     });
 };
 
+const promptEngineer = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: "Please enter the Engineer's name.",
+            name: 'name',
+        },
+        {
+            type: 'input',
+            message: 'Please enter an ID Number for the Engineer.',
+            name: 'id',
+        },
+        {
+            type: 'input',
+            message: 'Please enter an email address for the Engineer.',
+            name: 'email',
+        },
+        {
+            type: 'input',
+            message: "Please enter the Engineer's GitHub username.",
+            name: 'github',
+        },
+        {
+            type: 'list',
+            message: 'Would you like to add another Engineer, Intern, or finish building your team?',
+            choices: ['Engineer', 'Intern', 'Finish Building Team'],
+            name: 'role',
+        },
+    ])
+
+    .then((engineerInfo) => {
+        const engineer = new Engineer(engineerInfo.name, engineerInfo.id, engineerInfo.email, engineerInfo.github);
+        teamBuild.push(engineer);
+
+        switch(engineerInfo.role) {
+            case 'Engineer':
+                promptEngineer();
+                break;
+            case 'Intern':
+                promptIntern();
+                break;
+            default:
+                // write filename and data to pass off
+                generateFile();        
+        }
+    })
+};
+
 promptUser();
 
 function generateFile(file, data) {

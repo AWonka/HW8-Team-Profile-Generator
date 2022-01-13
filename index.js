@@ -102,21 +102,57 @@ const promptEngineer = () => {
             type: 'input',
             message: "Please enter the Engineer's name.",
             name: 'name',
+            validate: name => {
+                if (name) {
+                    return true;
+                } else {
+                    console.log('Please enter a valid name for the Engineer!')
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             message: 'Please enter an ID Number for the Engineer.',
             name: 'id',
+            validate: id => {
+                if (isNaN(id)) {
+                    console.log("Please enter a number for the Engineer's ID!")
+                    return false;
+                } else if (!id) {
+                    console.log("Please enter a number for the Engineer's ID!")
+                    return false;
+                } else {
+                    return true;
+                }
+            }
         },
         {
             type: 'input',
             message: 'Please enter an email address for the Engineer.',
             name: 'email',
+            validate: email => {
+                validInput = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+                if (validInput) {
+                    return true;
+                } else {
+                    console.log("Please enter a valid email!")
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             message: "Please enter the Engineer's GitHub username.",
             name: 'github',
+            validate: github => {
+                if (github) {
+                    return true;
+                } else {
+                    console.log("Please enter a GitHub username!")
+                    return false;
+                }
+            }
         },
         {
             type: 'list',

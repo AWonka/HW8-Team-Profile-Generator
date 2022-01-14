@@ -8,7 +8,7 @@ describe('Employee', () => {
         expect(employee.getRole()).toBe('Employee');
     });
     // test name property
-    it('Gives a name property to the employee object and getName function returns name property', () => {
+    it('Creates properties for employee object and get functions return those properties', () => {
         const nametest = 'Austin';
         const idtest = 25;
         const emailtest = 'austin@gmail.com';

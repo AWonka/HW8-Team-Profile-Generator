@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test HTML</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href= "test.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid text-center text-white bg-dark">
+            <h1 class= "pt-2 pb-2">Team Profile</h1>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container-fluid manager-card">
+            <!-- Generate manager card -->
+            <div class="card m-auto" style="width: 25rem;">
+                <h4 class="card-title bg-primary text-white text-center p-2 m-0">Manager: Manager Name</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item bg-secondary text-center"><span class="list-titles">ID Number: </span><span class="list-font">25</span></li>
+                  <!-- this works on opening in mail app for windows 10 -->
+                  <li class="list-group-item bg-secondary text-center"><span class="list-titles">Email: </span><a class="list-font" href="mailto:wonkaaustin@gmail.com">wonkaaustin@gmail.com</a></li>
+                  <li class="list-group-item bg-secondary text-center"><span class="list-titles">Office Number: </span><span class="list-font">48</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container-fluid employee-cards d-flex">
+            <!-- Generate manager card -->
+            <div class="card me-2" style="width: 25rem;">
+                <h4 class="card-title bg-warning text-white text-center p-2 m-0">Engineer: Manager Name</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item bg-secondary text-center"><span class="list-titles">ID Number: </span><span class="list-font">25</span></li>
+                  <!-- this works on opening in mail app for windows 10 -->
+                  <li class="list-group-item bg-secondary text-center"><span class="list-titles">Email: </span><a class="list-font" href="mailto:wonkaaustin@gmail.com">wonkaaustin@gmail.com</a></li>
+                  <li class="list-group-item bg-secondary text-center"><span class="list-titles">Github: </span> <a class ="list-font" href= "https://github.com/AWonka">AWonka</a></li>
+                </ul>
+            </div>
+
+            <div class="card me-2" style="width: 25rem;">
+                <h4 class="card-title bg-success text-white text-center p-2 m-0">Intern: Manager Name</h4>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item bg-secondary text-center"><span class="list-titles">ID Number: </span><span class="list-font">25</span></li>
+                  <!-- this works on opening in mail app for windows 10 -->
+                  <li class="list-group-item bg-secondary text-center"><span class="list-titles">Email: </span><a class="list-font" href="mailto:wonkaaustin@gmail.com">wonkaaustin@gmail.com</a></li>
+                  <li class="list-group-item bg-secondary text-center"><span class="list-titles">School: </span><span class="list-font">Georgia Tech</span></li>
+                </ul>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>

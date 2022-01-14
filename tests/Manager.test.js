@@ -1,47 +1,29 @@
 const Manager = require('../lib/Manager');
 
 describe('Manager', () => {
-    it('creates a Manager object', () => {
+    it('creates a Manager object and getRole function returns Manager', () => {
         const manager = new Manager();
 
         expect(typeof(manager)).toBe('object');
-    });
-
-    it('creates a name property for manager object and getName returns name value' , () => {
-        const name = 'Shannon';
-        const manager = new Manager(name);
-
-        expect(manager.name).toBe('Shannon');
-        expect(manager.getName()).toBe('Shannon');
-    });
-
-    it('creates an id property for manager object and getId returns id value', () => {
-        const id = 25;
-        const manager = new Manager('Shannon', id);
-
-        expect(manager.id).toBe(25);
-        expect(manager.getId()).toBe(25);
-    });
-
-    it('creates an email property for manager object and getEmail returns email value', () => {
-        const email = 'thisemail@gmail.com';
-        const manager = new Manager('Shannon', 25, email);
-
-        expect(manager.email).toBe('thisemail@gmail.com');
-        expect(manager.getEmail()).toBe('thisemail@gmail.com');
-    });
-    // test officeNumber property
-    it('creates an officeNumber property for manager object and getOfficeNumber returns officeNumber value', () => {
-        const officeNumber = 3;
-        const manager = new Manager('Shannon', 25, 'thisemail@gmail.com', officeNumber);
-
-        expect(manager.officeNumber).toBe(3);
-        expect(manager.getOfficeNumber()).toBe(3);
-    });
-    // test getRole function
-    it('should return Manager instead of Employee', () => {
-        const manager = new Manager();
-
         expect(manager.getRole()).toBe('Manager');
+    });
+
+    it('creates properties for manager and get functions return those properties' , () => {
+        const nametest = 'Shannon';
+        const idtest = 45;
+        const emailtest = 'shannon@gmail.com';
+        const officeNumbertest = 78;
+        const manager = new Manager(nametest, idtest, emailtest, officeNumbertest);
+
+        // test properties
+        expect(manager.name).toBe('Shannon');
+        expect(manager.id).toBe(45);
+        expect(manager.email).toBe('shannon@gmail.com');
+        expect(manager.officeNumber).toBe(78);
+        // test get functions
+        expect(manager.getName()).toBe('Shannon');
+        expect(manager.getId()).toBe(45);
+        expect(manager.getEmail()).toBe('shannon@gmail.com');
+        expect(manager.getOfficeNumber()).toBe(78);
     })
-})
+});

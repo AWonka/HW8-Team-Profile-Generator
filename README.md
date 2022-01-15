@@ -22,6 +22,7 @@ When are you done filling out all of the employees you then need to select "Fini
 
 Once you select "Finish Building Your Team" you will notice it logs all of the information you filled out and generates the HTML in the following file location
 /dist/index.html
+
 ![example of logged data](./images/image6.PNG)
 
 ## Finished Generated File

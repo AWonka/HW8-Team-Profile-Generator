@@ -1,0 +1,21 @@
+header {
+    padding-bottom: 2rem;
+}
+
+.list-font {
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    
+}
+
+.list-titles {
+    color: white;
+    padding-right: 5px;
+    font-size: 1.2rem;
+}
+
+.employee-cards {
+    padding-top: 2rem;
+    justify-content: center;
+}

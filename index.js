@@ -1,10 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+
+const generatePage = require('./src/generatePage');
 
 const teamBuild = [];
 
@@ -91,7 +92,7 @@ const promptUser = () => {
                 break;
             default:
                 // write filename and data to pass off to file
-                generateFile();    
+                generateFile('./dist/index.html', generatePage(teamBuild));    
         }
     });
 };
@@ -175,7 +176,7 @@ const promptEngineer = () => {
                 break;
             default:
                 // write filename and data to pass off
-                generateFile();        
+                generateFile('./dist/index.html', generatePage(teamBuild));        
         }
     })
 };
@@ -259,7 +260,7 @@ const promptIntern = () => {
                 break;
             default:
                 // put in file name and pass in data
-                generateFile();
+                generateFile('./dist/index.html', generatePage(teamBuild));
         }
 
 
